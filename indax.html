@@ -1,0 +1,202 @@
+">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ปรมินทร์ ไลไธสง - Portfolio</title>
+    <!-- ใช้ Tailwind CSS สำหรับการจัดสไตล์ -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- ใช้ฟอนต์ Inter สำหรับความคมชัด -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        /* สไตล์หลักสำหรับธีมโหดๆ เท่ๆ */
+        body {
+            background-color: #0d0d0d; /* พื้นหลังสีดำเข้ม */
+            color: #f0f0f0; /* สีตัวอักษรสีขาวเทา */
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* ป้องกันการเลื่อนแนวนอน */
+        }
+        /* สไตล์สำหรับปุ่มนำทางที่เลือกอยู่ */
+        .nav-link.active {
+            color: #d82b2b; /* สีแดงสด */
+            border-bottom: 2px solid #d82b2b;
+        }
+        /* สไตล์สำหรับส่วนเนื้อหาแต่ละหน้า */
+        .content-page {
+            min-height: calc(100vh - 80px); /* กำหนดความสูงให้เต็มจอ ลบส่วนนำทางออก */
+            padding-top: 80px; /* เว้นระยะจาก navbar */
+            display: none; /* ซ่อนทุกหน้าไว้ก่อน */
+            animation: fadeIn 1s ease-in-out;
+        }
+        /* แอนิเมชั่นสำหรับการเฟดเข้าของหน้า */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* สไตล์สำหรับเส้นขีดใต้ */
+        .line-border {
+            width: 150px;
+            height: 4px;
+            background-color: #d82b2b; /* สีแดงสด */
+            margin-top: 1rem;
+            border-radius: 9999px;
+        }
+    </style>
+</head>
+<body class="selection:bg-red-700 selection:text-white">
+
+    <!-- ส่วนนำทาง (Navigation Bar) ที่อยู่ด้านบนตลอดเวลา -->
+    <nav class="fixed top-0 left-0 w-full bg-[#1c1c1c] bg-opacity-90 backdrop-blur-sm z-50 shadow-lg border-b border-gray-700">
+        <div class="container mx-auto px-4 py-4 flex justify-center space-x-8 md:space-x-12">
+            <a href="#home" class="nav-link text-lg md:text-xl font-bold uppercase tracking-wider transition duration-300 hover:text-red-500 hover:border-b-2 hover:border-red-500" onclick="showPage('home')">
+                หน้าหลัก
+            </a>
+            <a href="#about" class="nav-link text-lg md:text-xl font-bold uppercase tracking-wider transition duration-300 hover:text-red-500 hover:border-b-2 hover:border-red-500" onclick="showPage('about')">
+                เกี่ยวกับฉัน
+            </a>
+            <a href="#hobbies" class="nav-link text-lg md:text-xl font-bold uppercase tracking-wider transition duration-300 hover:text-red-500 hover:border-b-2 hover:border-red-500" onclick="showPage('hobbies')">
+                งานอดิเรก
+            </a>
+            <a href="#education" class="nav-link text-lg md:text-xl font-bold uppercase tracking-wider transition duration-300 hover:text-red-500 hover:border-b-2 hover:border-red-500" onclick="showPage('education')">
+                การศึกษา
+            </a>
+            <a href="#contact" class="nav-link text-lg md:text-xl font-bold uppercase tracking-wider transition duration-300 hover:text-red-500 hover:border-b-2 hover:border-red-500" onclick="showPage('contact')">
+                ติดต่อ
+            </a>
+        </div>
+    </nav>
+
+    <!-- ส่วนเนื้อหาแต่ละหน้า -->
+    <main class="container mx-auto px-4 py-8">
+
+        <!-- หน้า 1: หน้าหลัก (Home) -->
+        <section id="home" class="content-page flex flex-col items-center justify-center text-center">
+            <div class="p-8 md:p-16 rounded-xl border-4 border-[#333] shadow-2xl bg-[#1a1a1a]">
+                <h1 class="text-4xl md:text-6xl lg:text-8xl font-black uppercase text-red-600 mb-4 tracking-widest leading-none">
+                    ปรมินทร์ <br class="md:hidden">ไลไธสง
+                </h1>
+                <p class="text-3xl md:text-4xl font-extrabold uppercase text-gray-400">
+                    (กล้า)
+                </p>
+                <div class="line-border mx-auto mt-6"></div>
+                <p class="mt-8 text-xl md:text-2xl text-gray-300 font-light max-w-2xl">
+                    ยินดีต้อนรับสู่พื้นที่ส่วนตัวของผม ที่นี่คุณจะได้ทำความรู้จักกับตัวตน ความสนใจ และชีวิตของผมในอีกด้านหนึ่ง
+                </p>
+            </div>
+        </section>
+
+        <!-- หน้า 2: เกี่ยวกับฉัน (About Me) -->
+        <section id="about" class="content-page">
+            <div class="p-8 md:p-16 rounded-xl border-4 border-[#333] shadow-2xl bg-[#1a1a1a]">
+                <h2 class="text-4xl md:text-5xl font-extrabold uppercase text-red-600 tracking-wider">
+                    เกี่ยวกับฉัน
+                </h2>
+                <div class="line-border"></div>
+                <p class="mt-8 text-lg md:text-xl text-gray-300 font-light">
+                    ชื่อจริงของผมคือ ปรมินทร์ ไลไธสง ชื่อเล่น กล้า ผมเป็นคนที่มีความสนใจในเรื่องดนตรีเป็นอย่างมาก ดนตรีคือส่วนหนึ่งของชีวิตและเป็นแรงบันดาลใจสำคัญของผมเสมอมา
+                </p>
+                <div class="flex items-center mt-8 text-gray-300">
+                    <!-- SVG ไอคอนสำหรับดนตรี -->
+                    <svg class="w-10 h-10 mr-4 text-red-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2a1 1 0 011 1v2a1 1 0 01-1 1H8a1 1 0 01-1-1V3a1 1 0 011-1h4zM4 9a1 1 0 011-1h10a1 1 0 011 1v8a1 1 0 01-1 1H5a1 1 0 01-1-1V9zM7 11a1 1 0 100 2h6a1 1 0 100-2H7zM7 14a1 1 0 100 2h6a1 1 0 100-2H7z"></path>
+                    </svg>
+                    <span class="text-2xl md:text-3xl font-bold">ความสนใจหลัก: ดนตรี</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- หน้า 3: งานอดิเรก (Hobbies) -->
+        <section id="hobbies" class="content-page">
+            <div class="p-8 md:p-16 rounded-xl border-4 border-[#333] shadow-2xl bg-[#1a1a1a]">
+                <h2 class="text-4xl md:text-5xl font-extrabold uppercase text-red-600 tracking-wider">
+                    งานอดิเรก
+                </h2>
+                <div class="line-border"></div>
+                <p class="mt-8 text-lg md:text-xl text-gray-300 font-light">
+                    งานอดิเรกที่ผมรักมากที่สุดคือการเล่นกีตาร์ไฟฟ้า มันคือการปลดปล่อยอารมณ์และสร้างสรรค์สิ่งใหม่ๆ ที่ไม่เคยเบื่อ
+                </p>
+                <div class="flex items-center mt-8 text-gray-300">
+                    <!-- SVG ไอคอนสำหรับกีตาร์ -->
+                    <svg class="w-10 h-10 mr-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2a1 1 0 011 1v1a1 1 0 01-1 1H4a1 1 0 01-1-1V3a1 1 0 011-1h8zM4 7h8a1 1 0 011 1v12a1 1 0 01-1 1H4a1 1 0 01-1-1V8a1 1 0 011-1zM5 9v10h6V9H5zM15 9h-2a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V10a1 1 0 00-1-1zM19 9h-2a1 1 0 00-1 1v10a1 1 0 001 1h2a1 1 0 001-1V10a1 1 0 00-1-1z"></path>
+                    </svg>
+                    <span class="text-2xl md:text-3xl font-bold">กีตาร์ไฟฟ้า</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- หน้า 4: ข้อมูลการศึกษา (Education) -->
+        <section id="education" class="content-page">
+            <div class="p-8 md:p-16 rounded-xl border-4 border-[#333] shadow-2xl bg-[#1a1a1a]">
+                <h2 class="text-4xl md:text-5xl font-extrabold uppercase text-red-600 tracking-wider">
+                    ข้อมูลการศึกษา
+                </h2>
+                <div class="line-border"></div>
+                <p class="mt-8 text-lg md:text-xl text-gray-300 font-light">
+                    ปัจจุบัน ผมกำลังศึกษาอยู่ที่โรงเรียนสุรธรรมพิทักษ์
+                </p>
+                <div class="flex items-center mt-8 text-gray-300">
+                    <!-- SVG ไอคอนสำหรับโรงเรียน -->
+                    <svg class="w-10 h-10 mr-4 text-red-500" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7v10l10 5 10-5V7L12 2zm0 2.2l8 4v7.6l-8 4-8-4V6.2l8-4zM7 9v6h2V9H7zm4 0v6h2V9h-2zM15 9v6h2V9h-2z"></path>
+                    </svg>
+                    <span class="text-2xl md:text-3xl font-bold">โรงเรียนสุรธรรมพิทักษ์</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- หน้า 5: ติดต่อ (Contact) -->
+        <section id="contact" class="content-page">
+            <div class="p-8 md:p-16 rounded-xl border-4 border-[#333] shadow-2xl bg-[#1a1a1a]">
+                <h2 class="text-4xl md:text-5xl font-extrabold uppercase text-red-600 tracking-wider">
+                    ติดต่อ
+                </h2>
+                <div class="line-border"></div>
+                <p class="mt-8 text-lg md:text-xl text-gray-300 font-light">
+                    คุณสามารถติดต่อผมได้ผ่านช่องทางด้านล่างนี้
+                </p>
+                <ul class="mt-6 space-y-4 text-center">
+                    <li>
+                        <a href="mailto:paramin.k@email.com" class="text-gray-400 text-lg md:text-xl hover:text-red-500 transition duration-300 font-bold">
+                            Email: paramin.k@email.com
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="text-gray-400 text-lg md:text-xl hover:text-red-500 transition duration-300 font-bold">
+                            Social: @klaxxx
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // ฟังก์ชันสำหรับซ่อนและแสดงหน้า
+        function showPage(pageId) {
+            // ซ่อนทุกหน้า
+            document.querySelectorAll('.content-page').forEach(page => {
+                page.style.display = 'none';
+            });
+            // แสดงหน้าที่ต้องการ
+            const pageToShow = document.getElementById(pageId);
+            if (pageToShow) {
+                pageToShow.style.display = 'flex';
+                pageToShow.classList.add('flex'); // สำหรับ layout
+            }
+
+            // จัดการคลาส active ในเมนูนำทาง
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+            });
+            document.querySelector(`.nav-link[href="#${pageId}"]`).classList.add('active');
+        }
+
+        // แสดงหน้าแรกเมื่อโหลดเว็บ
+        document.addEventListener('DOMContentLoaded', () => {
+            showPage('home');
+        });
+    </script>
+
+</body>
+</html>
